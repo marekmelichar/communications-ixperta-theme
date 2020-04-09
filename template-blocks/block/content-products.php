@@ -12,8 +12,7 @@ $id = 'products-' . $block['id'];
 ?>
 
 <article id="<?php echo $id; ?>" class="<?php the_field('bg_color_class_2'); ?>" style="background: <?php the_field('bg_color_2') ?>;">
-
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col">
         <h1><?php echo the_field('bg_color_heading_2'); ?></h1>
@@ -38,15 +37,17 @@ $id = 'products-' . $block['id'];
 
         ?>
 
-        <div class="col-md<?php echo count(get_field('repeater')) == 1 ? "" : "-4" ?> product text-center">
+        <div class="col-md<?php echo count(get_field('bg_color_stripe_repeater_2')) == 1 ? "" : "-4" ?> product text-center">
           <?php if($icon): ?>
-            <div class="svg img">
-              <?php if (strpos($icon['url'], '.svg') == true) { ?>
-                <?php echo file_get_contents($icon['url']); ?>
-              <?php } else { ?>
-                <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
-              <?php } ?>
-            </div>
+            <?php if($href): ?><a class="anchor-no-decoration" href="<?php echo $href; ?>"><?php endif; ?>
+              <div class="svg img">
+                <?php if (strpos($icon['url'], '.svg') == true) { ?>
+                  <?php echo file_get_contents($icon['url']); ?>
+                <?php } else { ?>
+                  <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
+                <?php } ?>
+              </div>
+            <?php if($href): ?></a><?php endif; ?>
           <?php endif; ?>
 
           <?php if($heading): ?>
@@ -59,16 +60,25 @@ $id = 'products-' . $block['id'];
 
           <?php if($content): ?>
             <div class="content">
-              <?php echo $content; ?>
+              <?php if($href): ?><a href="<?php echo $href; ?>"><?php endif; ?>
+                <?php echo $content; ?>
+              <?php if($href): ?></a><?php endif; ?>
             </div>
           <?php endif; ?>
           
-          <a href="<?php echo $href; ?>" class="__btn-more-info">
-            <?php echo $href_text; ?>
-          </a>
+          <?php if(!$href_text && $href): ?>
+            <a class="arrow-green-circle" href="<?php echo $href; ?>">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          <?php elseif(!$href_text && !$href): ?>
+          <?php else: ?>
+            <a href="<?php echo $href; ?>" class="__btn-more-info">
+              <?php echo $href_text; ?>
+            </a>
+          <?php endif; ?>
         </div>
 
-        <?php if ($i % 3 == 0 && count(get_field('repeater')) > 4 ) { ?>
+        <?php if ($i % 3 == 0 && count(get_field('bg_color_stripe_repeater_2')) > 4 ) { ?>
           </div>
           <div class="row justify-content-center">
         <?php } ?>
@@ -96,6 +106,20 @@ $id = 'products-' . $block['id'];
     position: relative;
   }
 
+  #<?php echo $id; ?> .product {
+    margin-top: 1.5rem;
+  }
+
+  #<?php echo $id; ?> h1 {
+    margin: 0.75rem 0 1.25rem 0;
+    /* margin: 0.5rem 0 2rem 0; */
+  }
+
+  #<?php echo $id; ?> .heading {
+    margin-top: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
   #<?php echo $id; ?> h2 {
     text-align: center;
   }
@@ -106,7 +130,12 @@ $id = 'products-' . $block['id'];
     transform: translateX(-50%);
   }
 
-  #<?php echo $id; ?> .svg {
+  #<?php echo $id; ?> h3 {
+    font-family: 'camptonsemibold', sans-serif;
+    font-size: 1.125rem;
+  }
+
+  #<?php echo $id; ?> .svg svg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,6 +144,10 @@ $id = 'products-' . $block['id'];
 
   #<?php echo $id; ?> .content {
     font-size: 0.875rem;
+  }
+
+  #<?php echo $id; ?> .content a {
+    color: #001A70;
   }
 
   #<?php echo $id; ?> .arrow-green-circle {
@@ -184,3 +217,19 @@ $id = 'products-' . $block['id'];
   }
 
 </style>
+
+
+
+
+
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    (function ($) {
+      $(window).on('load', function () {
+        var id = <?php echo json_encode($id); ?>;
+        equalheight($(`#${id} .row .heading`));
+      })
+    })(jQuery, window);
+  })
+</script>

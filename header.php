@@ -36,7 +36,7 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<div class="sublogo">
 						<div class="svg">
-							<?php //get_template_part('svg/logo_bezpecnost.svg'); ?>logo
+							<?php get_template_part('svg/logo_communications.svg'); ?>
 						</div>
 					</div>
 				</a>

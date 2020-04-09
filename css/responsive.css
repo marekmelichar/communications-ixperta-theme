@@ -400,6 +400,7 @@
   .logo {
     width: 50px;
     left: 20px;
+    top: 4px;
   }
 
   .sublogo {
@@ -409,7 +410,7 @@
   }
 
   .sublogo:before {
-    top: -2px;
+    top: 4px;
     height: 30px;
   }
 
@@ -539,7 +540,7 @@
   }
 
   header.header.show .logo, header.header.hide .logo {
-    top: 12px;
+    top: 14px;
     width: 50px;
   }
 
@@ -551,7 +552,7 @@
   header.header.show .sublogo:before, header.header.hide .sublogo:before {
     height: 30px;
     width: 1px;
-    top: 0;
+    top: 3px;
   }
 
   header.header.show .mobile-search,
@@ -682,6 +683,7 @@
   .logo {
     width: 40px;
     left: 20px;
+    top: 9px;
   }
 
   .sublogo {
@@ -691,12 +693,13 @@
   }
 
   .sublogo:before {
-    top: -2px;
+    top: 6px;
     height: 26px;
   }
 
   header.header.show .logo, header.header.hide .logo {
     width: 40px;
+    top: 17px;
   }
 
   header.header.show .sublogo, header.header.hide .sublogo {
@@ -707,7 +710,7 @@
   header.header.show .sublogo:before, header.header.hide .sublogo:before {
     height: 26px;
     width: 1px;
-    top: 0;
+    top: 5px;
   }
 
   .member .phone,

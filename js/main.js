@@ -10,6 +10,8 @@
 			equalheight('#about_us .about_us_tile .content');
 			// equalheight('#about_us .about_us_tile .content');
 			equalheight('.row [class*="col"] .argument');
+
+			// equalheight('[id*="products"] .heading');
 		})
 
 

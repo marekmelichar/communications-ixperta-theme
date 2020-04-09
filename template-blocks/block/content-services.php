@@ -11,7 +11,7 @@ $image = get_field('banner_background_image');
 
 ?>
 
-<article id="services" class="<?php the_field('bg_color_class'); ?>" style="background: <?php the_field('bg_color_services') ?>;">
+<article id="<?php echo $id; ?>" class="<?php the_field('bg_color_class'); ?>" style="background: <?php the_field('bg_color_services') ?>;">
 
   <div class="container">
     <div class="row">
@@ -24,7 +24,7 @@ $image = get_field('banner_background_image');
   <?php if( have_rows('bg_color_stripe_repeater') ): ?>
 
     <div class="container links bg_color_stripe_repeater">
-      <div class="row">
+      <div class="row justify-content-center">
 
 
 
@@ -39,16 +39,9 @@ $image = get_field('banner_background_image');
 
         ?>
 
-        <div class="col-md text-center">
-          <div class="row no-gutters">
+        <div class="col-md-4 text-center">
+          <div class="row no-gutters box">
             <div class="col">
-              <?php if($heading): ?>
-                <div class="heading">
-                  <?php if($href): ?><a href="<?php echo $href; ?>"><?php endif; ?>
-                    <h3 class="head"><?php echo $heading; ?></h3>
-                  <?php if($href): ?></a><?php endif; ?>
-                </div>
-              <?php endif; ?>
               <?php if($icon): ?>
                 <div class="svg img">
                   <?php if (strpos($icon['url'], '.svg') == true) { ?>
@@ -58,6 +51,15 @@ $image = get_field('banner_background_image');
                   <?php } ?>
                 </div>
               <?php endif; ?>
+
+              <?php if($heading): ?>
+                <div class="heading">
+                  <?php if($href): ?><a href="<?php echo $href; ?>"><?php endif; ?>
+                    <h3 class="head"><?php echo $heading; ?></h3>
+                  <?php if($href): ?></a><?php endif; ?>
+                </div>
+              <?php endif; ?>
+              
               <div class="content">
                 <?php echo $content; ?>
               </div>
@@ -93,26 +95,40 @@ $image = get_field('banner_background_image');
 
 
 <style type="text/css">
+
   #<?php echo $id; ?> {
+    padding: 2rem 0;
   }
 
-
-  <?php echo $id; ?> {
-    padding: 1.5rem 0;
+  #<?php echo $id; ?> h1 {
+    margin: 0.5rem 0 2rem 0;
   }
 
-  <?php echo $id; ?>.dark {
+  #<?php echo $id; ?> h3 {
+    font-family: 'camptonsemibold', sans-serif;
+    font-size: 1.125rem;
+    color: #00B388;
+  }
+
+  #<?php echo $id; ?> .box {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #EFEFEF;
+  }
+
+  #<?php echo $id; ?>.dark {
     text-align: center;
     color: #fff;
   }
 
-  <?php echo $id; ?>.light h2 {
+  #<?php echo $id; ?>.light h2 {
     text-align: center;
     color: #001A70;
   }
 
-  <?php echo $id; ?> .h2:after,
-  <?php echo $id; ?> h2:after {
+  #<?php echo $id; ?> .h2:after,
+  #<?php echo $id; ?> h2:after {
       content: '';
       display: block;
       position: absolute;
@@ -124,41 +140,41 @@ $image = get_field('banner_background_image');
       background-color: #00B388;
   }
 
-  <?php echo $id; ?>.dark .bg_color_stripe_repeater {
+  #<?php echo $id; ?>.dark .bg_color_stripe_repeater {
     color: #fff;
     padding: 1.5rem 0;
   }
 
-  <?php echo $id; ?>.dark .bg_color_stripe_repeater .heading a {
+  #<?php echo $id; ?>.dark .bg_color_stripe_repeater .heading a {
     color: #fff;
   }
 
-  <?php echo $id; ?>.light .bg_color_stripe_repeater {
+  #<?php echo $id; ?>.light .bg_color_stripe_repeater {
     padding: 0.75rem 0 0 0;
   }
 
-  <?php echo $id; ?> .bg_color_stripe_repeater .svg {
+  #<?php echo $id; ?> .bg_color_stripe_repeater .svg {
     width: 70px;
     margin: 1rem auto 1.5rem auto;
   }
 
-  <?php echo $id; ?> .bg_color_stripe_repeater .heading {
+  #<?php echo $id; ?> .bg_color_stripe_repeater .heading {
     margin: 0.75rem auto;
   }
 
-  <?php echo $id; ?> .bg_color_stripe_repeater .heading .head {
+  #<?php echo $id; ?> .bg_color_stripe_repeater .heading .head {
     font-family: 'camptonsemibold', sans-serif;
     font-weight: normal;
     text-align: center;
   }
 
-  <?php echo $id; ?> .bg_color_stripe_repeater .the-little-plus {
+  #<?php echo $id; ?> .bg_color_stripe_repeater .the-little-plus {
     width: 40px;
     height: 40px;
     margin: 0 auto;
   }
 
-  <?php echo $id; ?> .bg_color_stripe_repeater.links a {
+  #<?php echo $id; ?> .bg_color_stripe_repeater.links a {
     background-color: #DFDFDF;
     border-radius: 25px;
     padding: 0.5rem 1rem;
@@ -166,8 +182,8 @@ $image = get_field('banner_background_image');
     font-size: 0.875rem;
   }
 
-  <?php echo $id; ?> .bg_color_stripe_repeater .content p,
-  <?php echo $id; ?> .bg_color_stripe_repeater .content a {
+  #<?php echo $id; ?> .bg_color_stripe_repeater .content p,
+  #<?php echo $id; ?> .bg_color_stripe_repeater .content a {
     margin-top: 1rem;
     margin-bottom: 1.75rem;
   }
@@ -180,53 +196,53 @@ $image = get_field('banner_background_image');
 
 
   @media (min-width: 767px) and (max-width: 768px) {
-    <?php echo $id; ?> .bg_color_stripe_repeater .svg {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .svg {
       width: 40px;
       margin: 0 auto;
     }
 
-    <?php echo $id; ?> .bg_color_stripe_repeater .heading {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .heading {
       margin: 0 auto;
-    }
-
-    <?php echo $id; ?> .bg_color_stripe_repeater.links a {
-      background-color: #DFDFDF;
-      border-radius: 25px;
-      padding: 0.5rem 1rem;
-      color: #001A70;
-      font-size: 0.5rem;
     }
   }
 
   @media (max-width: 767px) {
 
-    <?php echo $id; ?> .bg_color_stripe_repeater .svg {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .svg {
       margin: 1rem auto 0.5rem auto;
     }
 
-    <?php echo $id; ?> .bg_color_stripe_repeater .heading {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .heading {
       margin: 0 auto;
     }
 
-    <?php echo $id; ?> .bg_color_stripe_repeater .heading .head {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .heading .head {
       text-align: center;
     }
 
-    <?php echo $id; ?> .bg_color_stripe_repeater .content p {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .content p {
       text-align: center !important;
     }
 
-    <?php echo $id; ?> .bg_color_stripe_repeater .col-md-3 {
+    #<?php echo $id; ?> .bg_color_stripe_repeater .col-md-3 {
       margin-top: 1.5rem;
-    }
-
-    <?php echo $id; ?> .bg_color_stripe_repeater.links {
-      background-color: #DFDFDF;
-      border-radius: 25px;
-      padding: 0.5rem 1rem;
-      color: #001A70;
-      font-size: 0.75rem;
     }
   }
 
 </style>
+
+
+
+
+
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    (function ($) {
+      $(window).on('load', function () {
+        var id = <?php echo json_encode($id); ?>;
+        equalheight($(`#${id} .content`));
+      })
+    })(jQuery, window);
+  })
+</script>

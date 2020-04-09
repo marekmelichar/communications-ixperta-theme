@@ -44,7 +44,7 @@ $image = get_field('banner_background_image');
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
   }
 
   #<?php echo $id; ?> .content {
