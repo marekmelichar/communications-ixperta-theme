@@ -31,6 +31,7 @@ $image = get_field('banner_background_image');
       <?php while( have_rows('bg_color_stripe_repeater') ): the_row();
 
         // vars
+        $show_bg_color = get_sub_field('show_bg_color');
         $icon = get_sub_field('icon');
         $heading = get_sub_field('heading');
         $content = get_sub_field('content', false, false);
@@ -40,7 +41,7 @@ $image = get_field('banner_background_image');
         ?>
 
         <div class="col-md-4 text-center">
-          <div class="row no-gutters box">
+          <div class="row no-gutters box <?php echo $show_bg_color ? 'show_bg_color' : '' ?>">
             <div class="col">
               <?php if($icon): ?>
                 <div class="svg img">
@@ -114,6 +115,9 @@ $image = get_field('banner_background_image');
     margin-bottom: 1.5rem;
     padding: 1rem;
     border-radius: 5px;
+  }
+
+  #<?php echo $id; ?> .box.show_bg_color {
     background-color: #EFEFEF;
   }
 

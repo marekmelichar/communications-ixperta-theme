@@ -1,5 +1,5 @@
 <?php
-	/* Template Name: Page Level 1 */
+	/* Template Name: Page Level 3 */
 ?>
 
 <?php get_header() ?>

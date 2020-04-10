@@ -8,6 +8,7 @@
 // create id attribute for specific styling
 $id = 'whyconnectwithus-' . $block['id'];
 
+$icon = get_field('top_image');
 ?>
 
 <article id="<?php echo $id; ?>" class="<?php the_field('wcwu_bg_color_class'); ?>" style="background: <?php the_field('wcwu_bg_color') ?>;">
@@ -19,6 +20,30 @@ $id = 'whyconnectwithus-' . $block['id'];
       </div>
     </div>
   </div>
+
+  <?php if(get_field('show_top_heading_image_text')): ?>
+    <div class="container show_top_heading_image_text">
+      <div class="row">
+        <div class="col">
+          
+          <h2 class="head text-center no-underline"><?php echo the_field('top_heading'); ?></h2>
+
+          <?php if($icon): ?>
+            <div class="svg img text-center">
+              <?php if (strpos($icon['url'], '.svg') == true) { ?>
+                <?php echo file_get_contents($icon['url']); ?>
+              <?php } else { ?>
+                <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
+              <?php } ?>
+            </div>
+          <?php endif; ?>
+
+          <div class="content text-center"><?php echo the_field('top_text'); ?></div>
+
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
 
   <?php if( have_rows('wcwu_bg_color_stripe_repeater') ): ?>
 
@@ -76,7 +101,12 @@ $id = 'whyconnectwithus-' . $block['id'];
 
 
 <style type="text/css">
-  #<?php echo $id; ?> {
+  #<?php echo $id; ?> .img {
+    margin: 1rem auto;
+  }
+
+  #<?php echo $id; ?> .show_top_heading_image_text {
+    margin: 0.5rem auto 2rem auto;
   }
 
   #<?php echo $id; ?> {
@@ -86,11 +116,13 @@ $id = 'whyconnectwithus-' . $block['id'];
   #<?php echo $id; ?>.dark h2 {
     text-align: center;
     color: #fff;
+    text-transform: none;
   }
 
   #<?php echo $id; ?>.light h2 {
     text-align: center;
     color: #001A70;
+    text-transform: none;
   }
 
   #<?php echo $id; ?> .h2:after,
@@ -175,7 +207,7 @@ $id = 'whyconnectwithus-' . $block['id'];
       color: #001A70;
       font-size: 0.5rem;
     }
-  }
+  } 
 
   @media (max-width: 767px) {
     #<?php echo $id; ?> {
