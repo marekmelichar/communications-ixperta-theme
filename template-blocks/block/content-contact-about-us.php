@@ -46,9 +46,9 @@ $id = 'contactaboutus-' . $block['id'];
     <?php if(get_field('about_us_heading')) { ?>
       <div class="row">
         <div class="col">
-            <h1><?php echo the_field('about_us_heading'); ?></h1>
+            <h1 style="color: <?php echo get_field('main_heading_color') ? get_field('main_heading_color') : "" ?>;"><?php echo the_field('about_us_heading'); ?></h1>
           <?php if(get_field('about_us_subheading')) { ?>
-            <h2><?php echo the_field('about_us_subheading'); ?></h2>
+            <h2 style="color: <?php echo get_field('main_subheading_color') ? get_field('main_subheading_color') : "" ?>;"><?php echo the_field('about_us_subheading'); ?></h2>
           <?php } ?>
         </div>
       </div>
@@ -269,6 +269,12 @@ $id = 'contactaboutus-' . $block['id'];
   #<?php echo $id; ?> .about_us_tile:nth-child(2n) .content,
   #<?php echo $id; ?> .about_us_tile:nth-child(2n) .footer {
     background-color: #DFDFDF;
+  }
+
+  .page-id-246 #<?php echo $id; ?> h1:after {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00B388;
   }
 
 

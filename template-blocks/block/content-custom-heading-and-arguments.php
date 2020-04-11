@@ -8,6 +8,7 @@
 // create id attribute for specific styling
 $id = 'customheadingandarguments-' . $block['id'];
 
+$tilescount = get_field('customheading_how_many_tiles_in_row');
 ?>
 
 <article id="<?php echo $id; ?>">
@@ -32,13 +33,15 @@ $id = 'customheadingandarguments-' . $block['id'];
             ?>
 
             <!-- if there is only one column, make it full width -->
-            <div class="col-md<?php echo count(get_field('repeater')) == 1 ? "" : "-3" ?>">
+            <!-- <div class="col-md<?php //echo count(get_field('repeater')) == 1 ? "" : "-4" ?>"> -->
+            <div class="col-md<?php echo count(get_field('repeater')) == 1 ? "" : "-" ?><?php echo 12 / $tilescount ?> text-center">
               <div class="content <?php echo get_sub_field('show_background_color') ? "" : "no-bg-color" ?>" style="background-color: <?php echo $background_color; ?>; color: <?php echo $text_color; ?>;">
                 <?php echo $content; ?>
               </div>
             </div>
 
-            <?php if ($i % 4 == 0 && count(get_field('repeater')) > 4 ) { ?>
+            <?php //if ($i % 3 == 0 && count(get_field('repeater')) > 3 ) { ?>
+            <?php if ($tilescount && $i % $tilescount == 0 && count(get_field('repeater')) > $tilescount ) { ?>
               </div>
               <div class="row justify-content-center">
             <?php } ?>

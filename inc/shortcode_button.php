@@ -8,10 +8,11 @@ function button_func( $atts ) {
     'color' => '#fff',
     'text' => '',
     'href' => '#',
-    'class' => 'btn shortcode-btn'
+    'class' => 'btn shortcode-btn',
+    'target' => '_blank'
   ), $atts );
 
-  $return = '<a class="'.$atts['class'].'" href="'.$atts['href'].'" target="_blank" style="background: '.$atts['bg'].'; color: '.$atts['color'].'; padding: 0.5rem 2rem; position: relative; border-radius: 25px;">';
+  $return = '<a class="'.$atts['class'].'" href="'.$atts['href'].'" target="'.$atts['target'].'" style="background: '.$atts['bg'].'; color: '.$atts['color'].'; padding: 0.5rem 2rem; position: relative; border-radius: 25px;">';
     $return .= $atts['text'];
   $return .='</a>';
   

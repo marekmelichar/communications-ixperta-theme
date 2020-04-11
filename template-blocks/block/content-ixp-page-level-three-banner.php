@@ -8,17 +8,26 @@
 // get image field (array)
 $image = get_field('ixp_level_three_image');
 $icon = get_field('ixp_level_three_icon');
+$class = get_field('ixp_level_three_custom_class');
 
 // create id attribute for specific styling
 $id = 'pagelevel_threebanner-' . $block['id'];
 
 ?>
 
-<section id="<?php echo $id; ?>">
+<section id="<?php echo $id; ?>" class="<?php echo $class; ?>">
 
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-md image_or_svg" style="background-image: url(<?php echo $image['url']; ?>);"></div>
+    <?php if($image) { ?>
+        <?php if (strpos($image['url'], '.svg') == true) { ?>
+          <div class="col-md image_or_svg svg">
+            <?php echo file_get_contents($image['url']); ?>
+          </div>
+        <?php } else { ?>
+          <div class="col-md image_or_svg img" style="background-image: url(<?php echo $image['url']; ?>);"></div>
+        <?php } ?>
+      <?php } ?>
       <div class="col-md content">
         <div class="top" style="background-color: <?php echo get_field('ixp_level_three_top_bg_color') ? the_field('ixp_level_three_top_bg_color') : "" ?>">
           <?php if($icon) { ?>
@@ -62,11 +71,22 @@ $id = 'pagelevel_threebanner-' . $block['id'];
 
 	#<?php echo $id; ?> {
     margin: 0;
-	}
+  }
 
-  #<?php echo $id; ?> .image_or_svg {
+  #<?php echo $id; ?> .image_or_svg.img {
     background-size: cover;
     background-position: center;
+  }
+
+  #<?php echo $id; ?> .image_or_svg.svg {
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #<?php echo $id; ?> .image_or_svg.svg svg {
+    width: 50%;
   }
 
   #<?php echo $id; ?> svg {
@@ -134,6 +154,23 @@ $id = 'pagelevel_threebanner-' . $block['id'];
     position: absolute;
     left: 15px;
     right: 15px;
+  }
+
+  #<?php echo $id; ?>.contact-page .content {
+    background-color: #fff !important;
+  }
+
+  #<?php echo $id; ?>.contact-page .bottom p {
+    margin: 0;
+  }
+
+	#<?php echo $id; ?>.contact-page .bottom {
+    padding: 0;
+  }
+  
+  #<?php echo $id; ?>.contact-page .bottom img {
+    margin: 0;
+    width: 100%;
   }
 
 

@@ -36,10 +36,14 @@ $id = 'howitworks-' . $block['id'];
 
             <div class="col-md">
               <div class="image_or_svg">
-                <?php if (strpos($image['url'], '.svg') == true) { ?>
-                  <?php echo file_get_contents($image['url']); ?>
+                <?php if($image) { ?>
+                  <?php if (strpos($image['url'], '.svg') == true) { ?>
+                    <?php echo file_get_contents($image['url']); ?>
+                  <?php } else { ?>
+                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
+                  <?php } ?>
                 <?php } else { ?>
-                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
+                  <strong><?php echo $i; ?></strong>
                 <?php } ?>
               </div>
 

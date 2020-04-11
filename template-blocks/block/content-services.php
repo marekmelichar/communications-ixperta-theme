@@ -8,7 +8,7 @@
 // create id attribute for specific styling
 $id = 'services-' . $block['id'];
 $image = get_field('banner_background_image');
-
+$tilescount = get_field('services_how_many_tiles_in_row');
 ?>
 
 <article id="<?php echo $id; ?>" class="<?php the_field('bg_color_class'); ?>" style="background: <?php the_field('bg_color_services') ?>;">
@@ -22,6 +22,7 @@ $image = get_field('banner_background_image');
   </div>
 
   <?php if( have_rows('bg_color_stripe_repeater') ): ?>
+    <?php $i = 1; ?>
 
     <div class="container links bg_color_stripe_repeater">
       <div class="row justify-content-center">
@@ -40,7 +41,8 @@ $image = get_field('banner_background_image');
 
         ?>
 
-        <div class="col-md-4 text-center">
+        <!-- <div class="col-md-4 text-center"> -->
+        <div class="col-md<?php echo count(get_field('bg_color_stripe_repeater')) == 1 ? "" : "-" ?><?php echo 12 / $tilescount ?> text-center">
           <div class="row no-gutters box <?php echo $show_bg_color ? 'show_bg_color' : '' ?>">
             <div class="col">
               <?php if($icon): ?>
@@ -70,7 +72,7 @@ $image = get_field('banner_background_image');
                 </a>
               <?php elseif(!$href_text && !$href): ?>
               <?php else: ?>
-                <a href="<?php echo $href; ?>" class="__btn-more-info">
+                <a href="<?php echo $href; ?>">
                   <?php echo $href_text; ?>
                 </a>
               <?php endif; ?>
@@ -78,8 +80,12 @@ $image = get_field('banner_background_image');
           </div>
         </div>
 
+        <?php if ($tilescount && $i % $tilescount == 0 && count(get_field('bg_color_stripe_repeater')) > $tilescount ) { ?>
+          </div>
+          <div class="row justify-content-center">
+        <?php } ?>
 
-
+        <?php $i++; ?>
       <?php endwhile; ?>
 
     </div>

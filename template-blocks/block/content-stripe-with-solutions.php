@@ -18,7 +18,7 @@ $id = 'stripewithsolutions-' . $block['id'];
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <h2><?php echo get_field('sws_heading'); ?></h2>
+        <h1><?php echo get_field('sws_heading'); ?></h1>
       </div>
     </div>
     <div class="row after-dotted-border">
@@ -52,6 +52,10 @@ $id = 'stripewithsolutions-' . $block['id'];
     padding: 2rem 0;
     background-color: #EFEFEF;
 	}
+
+  #<?php echo $id; ?> h1 {
+    margin: 0 0 3rem 0;
+  }
 
   #<?php echo $id; ?> h2 {
     margin: 0 0 3rem 0;
