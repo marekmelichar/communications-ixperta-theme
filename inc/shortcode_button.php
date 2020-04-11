@@ -17,6 +17,10 @@ function button_func( $atts ) {
   $return .='</a>';
   
   $return .='<style>';
+    $return .='.shortcode-btn {
+      word-break: break-word;
+      white-space: normal;
+    }';
     $return .='.shortcode-btn:hover {
       background: '.$atts['bg'].';
       opacity: 0.9;

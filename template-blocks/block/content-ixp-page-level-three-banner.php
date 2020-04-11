@@ -73,6 +73,10 @@ $id = 'pagelevel_threebanner-' . $block['id'];
     margin: 0;
   }
 
+  #<?php echo $id; ?>.contact-page {
+    margin-bottom: 5px;
+  }
+
   #<?php echo $id; ?> .image_or_svg.img {
     background-size: cover;
     background-position: center;
@@ -179,6 +183,12 @@ $id = 'pagelevel_threebanner-' . $block['id'];
 
     #<?php echo $id; ?> .image_or_svg {
       height: 200px;
+    }
+
+    #<?php echo $id; ?> .image_or_svg.img {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     #<?php echo $id; ?> .svg {

@@ -343,4 +343,4 @@ require_once THEME_DIRECTORY . '/template-blocks/register-block/stripe-with-solu
 require_once THEME_DIRECTORY . '/template-blocks/register-block/personal-reference.php';
 
 require_once THEME_DIRECTORY . '/template-blocks/register-block/ixp_page_level_three_banner.php';
-	
+require_once THEME_DIRECTORY . '/template-blocks/register-block/products_view_with_download_specs.php';

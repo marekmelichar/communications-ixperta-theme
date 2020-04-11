@@ -650,5 +650,21 @@
 
 
 
+		// const whyconnectwithus = $('[id*="whyconnectwithus-"]')
+		// const contactaboutus = $('[id*="contactaboutus-"]')
+		// // console.log(whyconnectwithus.closest(contactaboutus))
+		// // console.log(contactaboutus.closest(whyconnectwithus))
+		// // contactaboutus.prev(whyconnectwithus).css({ "marginTop": 0 })
+
+		// console.log(whyconnectwithus.next(contactaboutus));
+		
+		// $(whyconnectwithus.next(contactaboutus)).css({ "marginTop": 0 })
+
+
+
+
+
+
+
 	})
 })(jQuery, window);

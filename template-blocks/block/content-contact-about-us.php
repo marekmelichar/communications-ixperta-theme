@@ -147,6 +147,7 @@ $id = 'contactaboutus-' . $block['id'];
     padding: 1.5rem 0 3rem 0;
     background-color: #00B388;
     color: #fff;
+    /* margin-top: 5px; */
   }
 
   #<?php echo $id; ?> a {
@@ -284,10 +285,6 @@ $id = 'contactaboutus-' . $block['id'];
 
 
   @media (max-width: 767px) {
-    #<?php echo $id; ?> {
-      
-    }
-
     #<?php echo $id; ?> .about_us_tile {
       margin-bottom: 1rem;
     }

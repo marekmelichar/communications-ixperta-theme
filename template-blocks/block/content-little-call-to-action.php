@@ -16,10 +16,10 @@ $id = 'little_cta-' . $block['id'];
       <div class="col">
         <div class="cta" style="background-color: <?php the_field('little_cta_bg_color') ?>; color: <?php the_field('little_cta_text_color') ?>;">
           <?php if(get_field('little_cta_heading')) { ?>
-            <h2 class="green-text" style="color: <?php the_field('little_cta_text_color') ?>;"><?php echo the_field('little_cta_heading'); ?></h2>
+            <h1 class="green-text" style="color: <?php the_field('little_cta_text_color') ?>;"><?php echo the_field('little_cta_heading'); ?></h1>
           <?php } ?>
           <?php if(get_field('little_cta_subheading')) { ?>
-            <h3 class="blue-text" style="color: <?php the_field('little_cta_text_color') ?>;"><?php echo the_field('little_cta_subheading'); ?></h3>
+            <h2 class="blue-text" style="color: <?php the_field('little_cta_text_color') ?>;"><?php echo the_field('little_cta_subheading'); ?></h2>
           <?php } ?>
           <?php if(get_field('little_cta_button')) { ?>
             <a href="<?php echo the_field('little_cta_href'); ?>">
@@ -36,7 +36,8 @@ $id = 'little_cta-' . $block['id'];
 
 <style type="text/css">
   #<?php echo $id; ?> {
-    padding: 1.5rem 0;
+    /* padding: 1.5rem 0; */
+    margin: 1rem auto;
   }
 
 	#<?php echo $id; ?> .cta {
@@ -48,8 +49,8 @@ $id = 'little_cta-' . $block['id'];
     border-radius: 5px;
 	}
 
-  #<?php echo $id; ?> h2,
-  #<?php echo $id; ?> h3 {
+  #<?php echo $id; ?> h1,
+  #<?php echo $id; ?> h2 {
     text-align: center;
   }
 

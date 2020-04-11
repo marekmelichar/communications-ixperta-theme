@@ -43,7 +43,7 @@ $tilescount = get_field('services_how_many_tiles_in_row');
 
         <!-- <div class="col-md-4 text-center"> -->
         <div class="col-md<?php echo count(get_field('bg_color_stripe_repeater')) == 1 ? "" : "-" ?><?php echo 12 / $tilescount ?> text-center">
-          <div class="row no-gutters box <?php echo $show_bg_color ? 'show_bg_color' : '' ?>">
+          <div class="row justify-content-center no-gutters box <?php echo $show_bg_color ? 'show_bg_color' : '' ?>">
             <div class="col">
               <?php if($icon): ?>
                 <div class="svg img">
@@ -58,7 +58,7 @@ $tilescount = get_field('services_how_many_tiles_in_row');
               <?php if($heading): ?>
                 <div class="heading">
                   <?php if($href): ?><a href="<?php echo $href; ?>"><?php endif; ?>
-                    <h3 class="head"><?php echo $heading; ?></h3>
+                    <h3 class="head" style="color: <?php echo get_sub_field('heading_color') ?>;"><?php echo $heading; ?></h3>
                   <?php if($href): ?></a><?php endif; ?>
                 </div>
               <?php endif; ?>
