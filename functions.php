@@ -336,6 +336,7 @@ require_once THEME_DIRECTORY . '/template-blocks/register-block/heading-and-argu
 require_once THEME_DIRECTORY . '/template-blocks/register-block/data-loss-prevention.php';
 require_once THEME_DIRECTORY . '/template-blocks/register-block/how-it-works.php';
 require_once THEME_DIRECTORY . '/template-blocks/register-block/little-call-to-action.php';
+require_once THEME_DIRECTORY . '/template-blocks/register-block/fullwidth-call-to-action.php';
 require_once THEME_DIRECTORY . '/template-blocks/register-block/two-gray-green-columns.php';
 require_once THEME_DIRECTORY . '/template-blocks/register-block/icon-content-dotted-border.php';
 require_once THEME_DIRECTORY . '/template-blocks/register-block/stripe-with-tags.php';

@@ -388,7 +388,8 @@ a img.aligncenter {
 
 
 
-.primary-menu ul.sub-menu {
+.primary-menu ul.sub-menu,
+.menu-item-type-custom.menu-item-has-children .sub-menu {
     position: absolute;
     visibility: hidden;
     background: #EFEFEF;
@@ -402,6 +403,13 @@ a img.aligncenter {
     top: 24px;
     transition: visibility 0.6s, opacity 0.6s linear;
     opacity: 0;
+}
+
+.primary-menu ul.sub-menu ul.sub-menu {
+  position: relative;
+  padding: 0 0 0 10px;
+  margin: 0 0 30px 0;
+  top: 10px;
 }
 
 .primary-menu .menu-item-has-children:hover ul.sub-menu {
@@ -802,6 +810,8 @@ a.white-text {
 
 .search-icon {
   cursor: pointer;
+  width: 15px;
+  height: 23px;
 }
 
 .search-form {
@@ -979,11 +989,11 @@ a.white-text {
 }
 
 .sublogo {
-  /* width: 160px; */
   float: left;
   margin: 0 0 0 10px;
   padding: 6px 0 0 10px;
   position: relative;
+  width: 160px;
 }
 
 .sublogo:before {
@@ -991,7 +1001,7 @@ a.white-text {
   content: '';
   position: absolute;
   top: -2px;
-  left: 0;
+  left: 5px;
   height: 52px;
   width: 1px;
   background: #001A70;
@@ -1092,7 +1102,7 @@ html[lang="de-DE"] .primary-menu ul li:after {
   display: none;
 }
 
-.menu-item-type-custom.menu-item-has-children .sub-menu {
+/* .menu-item-type-custom.menu-item-has-children .sub-menu {
   position: absolute;
   display: none;
   background: #00B388;
@@ -1104,16 +1114,16 @@ html[lang="de-DE"] .primary-menu ul li:after {
   padding: 1rem;
   z-index: 10;
   top: 30px;
-}
+} */
 
-.menu-item-type-custom.menu-item-has-children .sub-menu li {
+/* .menu-item-type-custom.menu-item-has-children .sub-menu li {
   margin: 0;
-}
+} */
 
-.menu-item-type-custom.menu-item-has-children .sub-menu li a {
+/* .menu-item-type-custom.menu-item-has-children .sub-menu li a {
   color: #fff;
   font-size: 0.9rem;
-}
+} */
 
 .menu-item-type-custom.menu-item-has-children:hover .sub-menu {
   display: block;

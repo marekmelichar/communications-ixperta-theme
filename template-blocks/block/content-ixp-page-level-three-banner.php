@@ -182,18 +182,11 @@ $id = 'pagelevel_threebanner-' . $block['id'];
   @media (max-width: 767px) {
 
     #<?php echo $id; ?> .image_or_svg {
-      height: 200px;
-    }
-
-    #<?php echo $id; ?> .image_or_svg.img {
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 300px;
     }
 
     #<?php echo $id; ?> .svg {
-      width: 60%;
-      margin: 1rem auto;
+      width: 100%;
     }
 
     #<?php echo $id; ?> #breadcrumbs {

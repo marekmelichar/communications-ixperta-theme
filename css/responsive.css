@@ -138,6 +138,7 @@
   .sublogo:before {
     top: -5px;
     height: 40px;
+    left: 2px;
   }
 
   .primary-menu {
@@ -206,6 +207,14 @@
     left: 50%;
   }
 
+  .hamburger.open .sub-menu .sub-menu {
+    left: 0;
+  }
+
+  #mobile_menu .menu-item-has-children .sub-menu #dropdown_sipka {
+    display: none;
+  }
+
   .hamburger.open .sub-menu a {
     color: #001A70;
   }
@@ -271,6 +280,7 @@
   header.header.show .sublogo, header.header.hide .sublogo {
     top: 10px;
     width: 110px;
+    left: -4px;
   }
 
   header.header.show .sublogo:before, header.header.hide .sublogo:before {
@@ -412,6 +422,7 @@
   .sublogo:before {
     top: 4px;
     height: 30px;
+    left: 0;
   }
 
   .primary-menu {
@@ -519,7 +530,7 @@
   }
 
   .mobile-search .search-form {
-    top: 45px;
+    top: 40px;
     right: -10px;
     font-size: 0.95rem;
     background: #fff;
@@ -553,6 +564,7 @@
     height: 30px;
     width: 1px;
     top: 3px;
+    left: 0;
   }
 
   header.header.show .mobile-search,

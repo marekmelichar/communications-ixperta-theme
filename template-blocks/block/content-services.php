@@ -152,15 +152,16 @@ $tilescount = get_field('services_how_many_tiles_in_row');
 
   #<?php echo $id; ?>.dark .bg_color_stripe_repeater {
     color: #fff;
-    padding: 1.5rem 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  #<?php echo $id; ?>.light .bg_color_stripe_repeater {
+    padding-top: 0.75rem;
   }
 
   #<?php echo $id; ?>.dark .bg_color_stripe_repeater .heading a {
     color: #fff;
-  }
-
-  #<?php echo $id; ?>.light .bg_color_stripe_repeater {
-    padding: 0.75rem 0 0 0;
   }
 
   #<?php echo $id; ?> .bg_color_stripe_repeater .svg {
@@ -196,6 +197,11 @@ $tilescount = get_field('services_how_many_tiles_in_row');
   #<?php echo $id; ?> .bg_color_stripe_repeater .content a {
     margin-top: 1rem;
     margin-bottom: 1.75rem;
+  }
+
+  #<?php echo $id; ?> .bg_color_stripe_repeater .content a {
+    word-break: break-word;
+    white-space: nowrap;
   }
 
 

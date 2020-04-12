@@ -12,7 +12,7 @@
 
 				<?php the_content(); ?>
 
-				<?php get_template_part('partials/page_children_tiles'); ?>
+				<?php //get_template_part('partials/page_children_tiles'); ?>
 
 			</article>
 

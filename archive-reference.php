@@ -28,7 +28,7 @@ get_header();
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-      <div class="col col-md-3 reference-tiles__tile">
+      <div class="col-md-3 reference-tiles__tile">
           <?php $image = get_field('tile_svg_in_tile') ?>
           <?php $show_href = get_field('show_href') ?>
           <?php if($show_href): ?><a class="link-tile" href="<?php the_permalink(); ?>"><?php endif; ?>

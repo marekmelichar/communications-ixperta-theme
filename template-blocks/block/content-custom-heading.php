@@ -26,7 +26,7 @@ $id = 'customheading-' . $block['id'];
 
 <style type="text/css">
 	#<?php echo $id; ?> {
-    padding: 1rem 1rem 0.75rem 1rem;
+    padding: 2rem 1rem 0.75rem 1rem;
     margin-bottom: 1rem;
     text-align: center;
     background-color: #EFEFEF;

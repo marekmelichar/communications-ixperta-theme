@@ -93,6 +93,13 @@ $id = 'contactaboutus-' . $block['id'];
                     
                     <div class="mail">
                       <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                      <SCRIPT LANGUAGE="JavaScript">
+                        mail = '<?php echo $email; ?>'.split('@');
+                        user = mail[0];
+                        site = mail[1];
+                        document.write('<a href=\"mailto:' + user + '@' + site + '\">');
+                        document.write(user + '@' + site + '</a>');
+                      </SCRIPT>
                     </div>
 
                     <?php if( have_rows('social_media_icons') ): ?>
@@ -287,6 +294,23 @@ $id = 'contactaboutus-' . $block['id'];
   @media (max-width: 767px) {
     #<?php echo $id; ?> .about_us_tile {
       margin-bottom: 1rem;
+    }
+
+    #<?php echo $id; ?> .member {
+      text-align: center;
+    }
+
+    #<?php echo $id; ?> .member h2 {
+      text-align: center;
+    }
+
+    #<?php echo $id; ?> .member h2:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #<?php echo $id; ?> .member img {
+      width: 200px;
     }
 
     #<?php echo $id; ?> .member .social-list {
