@@ -21,11 +21,13 @@ $tilescount = get_field('prod_view_how_many_tiles_in_row');
         </div>
       </div>
     <?php } ?>
-    <div class="row main_subheading">
-      <div class="col">
-        <h2><?php the_field('prod_view_h2'); ?></h2>
+    <?php if(get_field('prod_view_h2')) { ?>
+      <div class="row main_subheading">
+        <div class="col">
+          <h2><?php the_field('prod_view_h2'); ?></h2>
+        </div>
       </div>
-    </div>
+    <?php } ?>
     <div class="row main_description">
       <div class="col">
         <p><?php the_field('prod_view_description'); ?></p>
